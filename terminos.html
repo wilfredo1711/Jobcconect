@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos de Uso — JobConnect</title>
+  <meta name="description" content="Términos y condiciones de uso de la plataforma JobConnect. República Dominicana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #05070f;
+      --bg2: #090c18;
+      --surface: #0e1221;
+      --border: rgba(255,255,255,.07);
+      --blue: #6b63ef;
+      --cyan: #3ecfcf;
+      --grad: linear-gradient(135deg, #6b63ef, #3ecfcf);
+      --text: #e4eaff;
+      --muted: #6b7a9e;
+      --dim: #333d5a;
+      --nav-h: 64px;
+      --r: 14px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 99px; }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      background: rgba(5,7,15,.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--grad);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .85rem;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(107,99,239,.35));
+    }
+
+    .nav-back {
+      margin-left: auto;
+      font-size: .85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* HERO */
+    .page-hero {
+      padding: 140px 0 72px;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,99,239,.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(62,207,207,.08);
+      border: 1px solid rgba(62,207,207,.2);
+      border-radius: 99px;
+      padding: 5px 16px;
+      margin-bottom: 20px;
+    }
+
+    .page-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -.025em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: .875rem;
+      color: var(--muted);
+    }
+
+    .page-meta strong {
+      color: var(--text);
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      padding-bottom: 120px;
+      align-items: start;
+    }
+
+    /* SIDEBAR TOC */
+    .toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+    }
+
+    .toc-title {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 14px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .toc-list a {
+      display: block;
+      font-size: .82rem;
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 7px;
+      border-left: 2px solid transparent;
+      transition: all .18s;
+      line-height: 1.4;
+    }
+
+    .toc-list a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      border-left-color: var(--blue);
+    }
+
+    /* CONTENT */
+    .doc-content {
+      min-width: 0;
+    }
+
+    .section-block {
+      margin-bottom: 56px;
+      animation: fadeUp .5s ease both;
+    }
+
+    .section-block:nth-child(1) { animation-delay: .05s; }
+    .section-block:nth-child(2) { animation-delay: .1s; }
+    .section-block:nth-child(3) { animation-delay: .15s; }
+    .section-block:nth-child(4) { animation-delay: .2s; }
+    .section-block:nth-child(5) { animation-delay: .25s; }
+    .section-block:nth-child(6) { animation-delay: .3s; }
+    .section-block:nth-child(7) { animation-delay: .35s; }
+    .section-block:nth-child(8) { animation-delay: .4s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-num {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-text {
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .section-text:last-child { margin-bottom: 0; }
+
+    .doc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 12px 0 14px;
+    }
+
+    .doc-list li {
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .doc-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: .8rem;
+    }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 20px;
+      margin: 18px 0;
+      font-size: .875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .highlight-box strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 64px;
+    }
+
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(107,99,239,.1), transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      font-size: .875rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-box a.btn {
+      display: inline-block;
+      padding: 10px 28px;
+      background: var(--grad);
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: .875rem;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .contact-box a.btn:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: .78rem;
+      color: var(--dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-link {
+      font-size: .82rem;
+      color: var(--dim);
+      transition: color .18s;
+    }
+
+    .footer-link:hover { color: var(--muted); }
+
+    @media (max-width: 768px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      nav { padding: 0 20px; }
+      .container { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="jobconnect.html" class="nav-brand">
+    <img src="Jobconnect.png" alt="JobConnect" class="nav-logo-img">
+  </a>
+  <a href="jobconnect.html" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-label">Legal</span>
+    <h1 class="page-title">Términos de Uso</h1>
+    <p class="page-meta">Última actualización: <strong>18 de abril de 2026</strong> · Versión 1.0</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="toc">
+      <p class="toc-title">Contenido</p>
+      <ul class="toc-list">
+        <li><a href="#aceptacion">1. Aceptación</a></li>
+        <li><a href="#descripcion">2. Descripción del servicio</a></li>
+        <li><a href="#registro">3. Registro y cuenta</a></li>
+        <li><a href="#uso-aceptable">4. Uso aceptable</a></li>
+        <li><a href="#contenido">5. Contenido del usuario</a></li>
+        <li><a href="#propiedad">6. Propiedad intelectual</a></li>
+        <li><a href="#privacidad">7. Privacidad y datos</a></li>
+        <li><a href="#pagos">8. Planes y pagos</a></li>
+        <li><a href="#responsabilidad">9. Limitación de responsabilidad</a></li>
+        <li><a href="#terminacion">10. Terminación</a></li>
+        <li><a href="#legislacion">11. Legislación aplicable</a></li>
+        <li><a href="#contacto">12. Contacto</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="doc-content">
+
+      <div class="section-block" id="aceptacion">
+        <div class="section-num">Artículo 01</div>
+        <h2 class="section-heading">Aceptación de los términos</h2>
+        <p class="section-text">Al acceder o utilizar la plataforma JobConnect, disponible en <strong style="color:var(--text)">jobconnect.com.do</strong> y sus aplicaciones asociadas, usted acepta quedar legalmente vinculado por los presentes Términos de Uso. Si no está de acuerdo con alguna parte de estos términos, no podrá acceder ni utilizar nuestros servicios.</p>
+        <p class="section-text">Estos términos constituyen un acuerdo legal entre usted (el usuario) y <strong style="color:var(--text)">JobConnect SRL</strong>, empresa domiciliada en la República Dominicana. Le recomendamos leer este documento en su totalidad antes de comenzar a usar la plataforma.</p>
+        <div class="highlight-box">
+          <strong>Nota importante</strong>
+          Al hacer clic en "Crear cuenta", "Empezar gratis" o cualquier botón de registro, usted confirma que ha leído, entendido y aceptado estos Términos de Uso y nuestra Política de Privacidad.
+        </div>
+      </div>
+
+      <div class="section-block" id="descripcion">
+        <div class="section-num">Artículo 02</div>
+        <h2 class="section-heading">Descripción del servicio</h2>
+        <p class="section-text">JobConnect es una plataforma digital de intermediación laboral que facilita la conexión entre candidatos en búsqueda de empleo y empresas que ofrecen oportunidades de trabajo en la República Dominicana y América Latina.</p>
+        <p class="section-text">Nuestros servicios incluyen, entre otros:</p>
+        <ul class="doc-list">
+          <li>Creación y gestión de perfiles profesionales para candidatos.</li>
+          <li>Publicación y administración de ofertas de empleo para empresas.</li>
+          <li>Sistema de matching inteligente basado en habilidades y preferencias.</li>
+          <li>Herramientas de comunicación directa entre candidatos y reclutadores.</li>
+          <li>Analíticas de perfil y estadísticas de aplicaciones.</li>
+          <li>Acceso a contenido de orientación profesional y desarrollo de carrera.</li>
+        </ul>
+        <p class="section-text">JobConnect se reserva el derecho de modificar, suspender o discontinuar cualquier aspecto del servicio en cualquier momento, con o sin aviso previo.</p>
+      </div>
+
+      <div class="section-block" id="registro">
+        <div class="section-num">Artículo 03</div>
+        <h2 class="section-heading">Registro y cuenta de usuario</h2>
+        <p class="section-text">Para acceder a las funciones de la plataforma, debe crear una cuenta proporcionando información veraz, completa y actualizada. Usted es responsable de:</p>
+        <ul class="doc-list">
+          <li>Mantener la confidencialidad de su contraseña y credenciales de acceso.</li>
+          <li>Notificar inmediatamente a JobConnect ante cualquier uso no autorizado de su cuenta.</li>
+          <li>Toda actividad que ocurra bajo su cuenta, autorizada o no.</li>
+          <li>Garantizar que la información de su perfil sea precisa y esté actualizada.</li>
+        </ul>
+        <p class="section-text">El registro en JobConnect está permitido únicamente para personas mayores de 16 años. Los menores de 18 años deben contar con el consentimiento de sus padres o tutores legales.</p>
+        <div class="highlight-box">
+          <strong>Perfiles verificados</strong>
+          JobConnect puede solicitar documentación adicional para verificar la identidad de candidatos o la legitimidad de empresas registradas. La verificación mejora la confianza y visibilidad en la plataforma.
+        </div>
+      </div>
+
+      <div class="section-block" id="uso-aceptable">
+        <div class="section-num">Artículo 04</div>
+        <h2 class="section-heading">Uso aceptable</h2>
+        <p class="section-text">Al utilizar JobConnect, usted se compromete a no llevar a cabo ninguna de las siguientes conductas prohibidas:</p>
+        <ul class="doc-list">
+          <li>Publicar información falsa, engañosa o fraudulenta en su perfil u ofertas de empleo.</li>
+          <li>Acosar, intimidar o discriminar a otros usuarios por razón de género, raza, religión, orientación sexual, discapacidad u otra condición.</li>
+          <li>Utilizar la plataforma para actividades ilegales, incluyendo fraude, phishing o suplantación de identidad.</li>
+          <li>Scraping, crawling o extracción automatizada de datos de la plataforma sin autorización escrita.</li>
+          <li>Distribuir spam, malware o contenido publicitario no autorizado a través del sistema de mensajería.</li>
+          <li>Publicar ofertas de trabajo engañosas, sin remuneración real o con fines ajenos a la contratación legítima.</li>
+          <li>Intentar acceder a cuentas de otros usuarios o vulnerar los sistemas de seguridad de la plataforma.</li>
+        </ul>
+        <p class="section-text">El incumplimiento de estas normas podrá resultar en la suspensión o eliminación definitiva de su cuenta, sin perjuicio de las acciones legales que pudieran corresponder.</p>
+      </div>
+
+      <div class="section-block" id="contenido">
+        <div class="section-num">Artículo 05</div>
+        <h2 class="section-heading">Contenido del usuario</h2>
+        <p class="section-text">Usted conserva la propiedad intelectual de todo contenido que cargue en JobConnect (currículum, fotografías, descripciones, etc.). Sin embargo, al publicarlo en nuestra plataforma, nos otorga una licencia no exclusiva, mundial, libre de regalías para usar, reproducir, mostrar y distribuir dicho contenido únicamente con el fin de operar y mejorar el servicio.</p>
+        <p class="section-text">JobConnect no se hace responsable del contenido publicado por los usuarios, pero se reserva el derecho de eliminar cualquier contenido que viole estos términos, sea ofensivo, ilegal o inapropiado, sin necesidad de justificación previa.</p>
+        <p class="section-text">Usted garantiza que tiene todos los derechos necesarios sobre el contenido que publica y que dicho contenido no infringe derechos de terceros.</p>
+      </div>
+
+      <div class="section-block" id="propiedad">
+        <div class="section-num">Artículo 06</div>
+        <h2 class="section-heading">Propiedad intelectual</h2>
+        <p class="section-text">La plataforma JobConnect, incluyendo su diseño, logotipos, código fuente, algoritmos, textos, gráficos y demás elementos, es propiedad exclusiva de JobConnect SRL y está protegida por las leyes dominicanas e internacionales de propiedad intelectual.</p>
+        <p class="section-text">Se prohíbe expresamente:</p>
+        <ul class="doc-list">
+          <li>Copiar, reproducir o redistribuir cualquier elemento de la plataforma sin autorización escrita.</li>
+          <li>Realizar ingeniería inversa del software o algoritmos de la plataforma.</li>
+          <li>Usar las marcas, logotipos o nombre comercial de JobConnect sin permiso previo.</li>
+        </ul>
+      </div>
+
+      <div class="section-block" id="privacidad">
+        <div class="section-num">Artículo 07</div>
+        <h2 class="section-heading">Privacidad y protección de datos</h2>
+        <p class="section-text">JobConnect trata sus datos personales de conformidad con la <strong style="color:var(--text)">Ley 172-13 sobre Protección de Datos Personales</strong> y la <strong style="color:var(--text)">Ley 126-02 de Comercio Electrónico</strong> de la República Dominicana.</p>
+        <p class="section-text">Sus datos personales son utilizados únicamente para:</p>
+        <ul class="doc-list">
+          <li>Operar y personalizar su experiencia en la plataforma.</li>
+          <li>Facilitar la conexión entre candidatos y empresas.</li>
+          <li>Enviar notificaciones relacionadas con su cuenta y actividad.</li>
+          <li>Mejorar nuestros servicios a través de analíticas agregadas y anonimizadas.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>Compromiso de seguridad</strong>
+          Implementamos cifrado SSL/TLS en todas las comunicaciones, autenticación de dos factores (2FA) y nunca vendemos, alquilamos ni compartimos sus datos personales con terceros con fines comerciales ajenos a la operación de la plataforma.
+        </div>
+        <p class="section-text">Para más detalles, consulte nuestra <a href="privacidad.html" style="color:var(--cyan)">Política de Privacidad completa</a>.</p>
+      </div>
+
+      <div class="section-block" id="pagos">
+        <div class="section-num">Artículo 08</div>
+        <h2 class="section-heading">Planes y pagos</h2>
+        <p class="section-text">JobConnect ofrece un plan básico gratuito para candidatos y planes de pago para funciones avanzadas y para empresas. Las condiciones específicas de cada plan se detallan en la página de precios de la plataforma.</p>
+        <ul class="doc-list">
+          <li>Los pagos se procesan a través de pasarelas de pago seguras y certificadas.</li>
+          <li>Las suscripciones se renuevan automáticamente salvo que el usuario las cancele antes del próximo ciclo de facturación.</li>
+          <li>Los precios pueden estar expresados en pesos dominicanos (DOP) o dólares estadounidenses (USD) según el plan seleccionado.</li>
+          <li>JobConnect no almacena datos de tarjetas de crédito o débito en sus servidores.</li>
+        </ul>
+        <p class="section-text">Las solicitudes de reembolso se evaluarán caso por caso dentro de los primeros 7 días calendario posteriores al cobro. Pasado este plazo, no se garantizan reembolsos por el período ya pagado.</p>
+      </div>
+
+      <div class="section-block" id="responsabilidad">
+        <div class="section-num">Artículo 09</div>
+        <h2 class="section-heading">Limitación de responsabilidad</h2>
+        <p class="section-text">JobConnect actúa como intermediario entre candidatos y empresas. No garantiza la obtención de empleo, la veracidad absoluta de las ofertas publicadas por terceros ni el resultado de ningún proceso de selección.</p>
+        <p class="section-text">En ningún caso JobConnect será responsable por:</p>
+        <ul class="doc-list">
+          <li>Pérdidas indirectas, incidentales o consecuentes derivadas del uso o imposibilidad de uso de la plataforma.</li>
+          <li>Daños causados por interrupciones del servicio, ataques informáticos o causas de fuerza mayor.</li>
+          <li>Decisiones de contratación tomadas por empresas o candidatos basadas en información de la plataforma.</li>
+          <li>Contenido publicado por usuarios que incumpla estos términos.</li>
+        </ul>
+        <p class="section-text">La plataforma se ofrece "tal cual" y JobConnect no otorga garantías expresas o implícitas sobre la disponibilidad ininterrumpida del servicio.</p>
+      </div>
+
+      <div class="section-block" id="terminacion">
+        <div class="section-num">Artículo 10</div>
+        <h2 class="section-heading">Terminación de la cuenta</h2>
+        <p class="section-text">Usted puede eliminar su cuenta en cualquier momento desde la configuración de su perfil. JobConnect también podrá suspender o eliminar su cuenta de forma unilateral si:</p>
+        <ul class="doc-list">
+          <li>Se detecta una violación de estos Términos de Uso.</li>
+          <li>La cuenta presenta actividad fraudulenta o sospechosa.</li>
+          <li>Lo requiera una orden judicial o autoridad competente.</li>
+          <li>La cuenta permanece inactiva por más de 24 meses consecutivos.</li>
+        </ul>
+        <p class="section-text">Tras la eliminación de la cuenta, sus datos serán tratados de acuerdo a nuestra Política de Privacidad y la legislación dominicana aplicable.</p>
+      </div>
+
+      <div class="section-block" id="legislacion">
+        <div class="section-num">Artículo 11</div>
+        <h2 class="section-heading">Legislación aplicable y jurisdicción</h2>
+        <p class="section-text">Estos Términos de Uso se rigen por las leyes vigentes de la <strong style="color:var(--text)">República Dominicana</strong>, incluyendo pero no limitado a:</p>
+        <ul class="doc-list">
+          <li>Ley 172-13 — Protección de Datos Personales.</li>
+          <li>Ley 126-02 — Comercio Electrónico, Documentos y Firmas Digitales.</li>
+          <li>Código de Trabajo de la República Dominicana.</li>
+          <li>Ley 20-00 — Propiedad Industrial.</li>
+        </ul>
+        <p class="section-text">Cualquier disputa derivada del uso de la plataforma se someterá a la jurisdicción de los tribunales competentes de Santo Domingo, República Dominicana, salvo acuerdo previo de arbitraje entre las partes.</p>
+      </div>
+
+      <div class="section-block" id="contacto">
+        <div class="section-num">Artículo 12</div>
+        <h2 class="section-heading">Contacto y consultas legales</h2>
+        <p class="section-text">Si tiene preguntas, dudas o reclamos sobre estos Términos de Uso, puede comunicarse con nuestro equipo legal a través de los siguientes canales:</p>
+        <ul class="doc-list">
+          <li>Correo electrónico: <a href="mailto:legal@jobconnect.com.do" style="color:var(--cyan)">legal@jobconnect.com.do</a></li>
+          <li>Correo general: <a href="mailto:hola@jobconnect.com.do" style="color:var(--cyan)">hola@jobconnect.com.do</a></li>
+          <li>Dirección: Santo Domingo, República Dominicana.</li>
+        </ul>
+        <p class="section-text">Nos comprometemos a responder toda consulta legal en un plazo máximo de 5 días hábiles.</p>
+      </div>
+
+      <!-- CONTACT BOX -->
+      <div class="contact-box">
+        <h3>¿Tienes dudas sobre estos términos?</h3>
+        <p>Nuestro equipo está disponible para aclarar cualquier punto de este documento.</p>
+        <a href="mailto:legal@jobconnect.com.do" class="btn">Contactar al equipo legal</a>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 JobConnect · Hecho con ♥ en Rep. Dominicana 🇩🇴</span>
+      <div class="footer-links">
+        <a href="terminos.html" class="footer-link" style="color:var(--muted)">Términos</a>
+        <a href="privacidad.html" class="footer-link">Privacidad</a>
+        <a href="mailto:hola@jobconnect.com.do" class="footer-link">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
